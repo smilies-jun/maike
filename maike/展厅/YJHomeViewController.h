@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YJHomeViewController : UITableViewController
+@interface YJHomeViewController : YJBaseViewController
 
 @end
 

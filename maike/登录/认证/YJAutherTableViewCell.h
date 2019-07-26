@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YJAutherTableViewCell : UITableViewCell
+@property (nonatomic , retain) UILabel *AutherTitleLabel;//
+@property (nonatomic , retain) UIButton *AutherButton;//
 
+- (void)configUI:(NSIndexPath *)indexPath;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -8,10 +8,18 @@
 
 #import "YJMyOrdwerViewController.h"
 #import "DNSPageView_ObjC.h"
+
 #import "YJAllOrderViewController.h"
+#import "YJCreateOrderViewController.h"
+#import "YJCompleteOrderViewController.h"
+#import "YJSendOrderViewController.h"
+#import "YJUseOrderViewController.h"
+#import "YJReceivedOrderViewController.h"
 
-@interface YJMyOrdwerViewController ()<UISearchResultsUpdating,UISearchControllerDelegate>
 
+@interface YJMyOrdwerViewController ()<UISearchResultsUpdating,UISearchControllerDelegate>{
+    DNSPageView *pageView;
+}
 @end
 
 @implementation YJMyOrdwerViewController
@@ -22,25 +30,46 @@
     // Do any additional setup after loading the view.
     
     self.TopView.hidden = NO;
+    [self CreateUI];
     
+}
+- (void)CreateUI{
     DNSPageStyle *style = [[DNSPageStyle alloc] init];
     style.titleViewScrollEnabled = YES;
     style.titleScaleEnabled = YES;
+    style.titleFont = [UIFont systemFontOfSize:13];
     
     // 设置标题内容
-    NSArray <NSString *>*titles = @[@"头条", @"视频", @"娱乐", @"要问", @"体育" , @"科技" , @"汽车" , @"时尚" , @"图片" , @"游戏" , @"房产"];
+    NSArray <NSString *>*titles = @[@"全部", @"已创建",@"已生效",@"已发货",@"已到货",@"已完成"];
+    YJAllOrderViewController *allVC = [[YJAllOrderViewController alloc] init];
+    allVC.view.backgroundColor = [UIColor blueColor];
+    [self addChildViewController:allVC];
     
-    // 创建每一页对应的controller
-    for (int i = 0; i < titles.count; i++) {
-        YJAllOrderViewController *controller = [[YJAllOrderViewController alloc] init];
-        controller.view.backgroundColor = [UIColor blueColor];
-        [self addChildViewController:controller];
-    }
+    YJCreateOrderViewController *recateVC = [[YJCreateOrderViewController alloc] init];
+    recateVC.view.backgroundColor = [UIColor redColor];
+    [self addChildViewController:recateVC];
+    
+    YJCompleteOrderViewController *completeVC = [[YJCompleteOrderViewController alloc] init];
+    completeVC.view.backgroundColor = [UIColor redColor];
+    [self addChildViewController:completeVC];
+    
+    YJSendOrderViewController *sendVC = [[YJSendOrderViewController alloc] init];
+    sendVC.view.backgroundColor = [UIColor redColor];
+    [self addChildViewController:sendVC];
+    
+    YJUseOrderViewController *useVC = [[YJUseOrderViewController alloc] init];
+    useVC.view.backgroundColor = [UIColor redColor];
+    [self addChildViewController:useVC];
+    
+    YJReceivedOrderViewController *receivedVC = [[YJReceivedOrderViewController alloc] init];
+    receivedVC.view.backgroundColor = [UIColor redColor];
+    [self addChildViewController:receivedVC];
+    
     
     CGSize size = [UIScreen mainScreen].bounds.size;
     
     // 创建对应的DNSPageView，并设置它的frame
-    DNSPageView *pageView = [[DNSPageView alloc] initWithFrame:CGRectMake(0, kGHSafeAreaTopHeight+20, size.width, size.height) style:style titles:titles childViewControllers:self.childViewControllers startIndex:0];
+    pageView = [[DNSPageView alloc] initWithFrame:CGRectMake(0, kGHSafeAreaTopHeight+20, size.width, size.height) style:style titles:titles childViewControllers:self.childViewControllers startIndex:0];
     [self.view addSubview:pageView];
 }
 #pragma  mark --UISearchResultsUpdating
@@ -49,15 +78,8 @@
     NSLog(@"更新结果222222 ");
     self.edgesForExtendedLayout = UIRectEdgeNone;
     NSString * inputStr = searchController.searchBar.text;
-    //    if (self.resultArr.count > 0) {
-    //        [self.resultArr removeAllObjects];
-    //    }
-    //    for (NSString * str in self.dataArr) {
-    //        if ([str.lowercaseString rangeOfString:inputStr.lowercaseString].location != NSNotFound) {
-    //            [self.resultArr addObject:str];
-    //        }
-    //    }
-    //    [self.OrderTableview reloadData];
+   // pageView.startIndex = @"3";
+    
 }
 #pragma  mark --UISearchControllerDelegate
 //UISearchControllerDelegate代理方法

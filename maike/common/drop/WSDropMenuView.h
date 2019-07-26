@@ -22,7 +22,6 @@
 
 @interface WSIndexPath : NSObject
 
-
 @property (nonatomic,assign) NSInteger column; //区分  0 为左边的   1 是 右边的
 @property (nonatomic,assign) NSInteger row; //左边第一级的行
 @property (nonatomic,assign) NSInteger item; //左边第二级的行

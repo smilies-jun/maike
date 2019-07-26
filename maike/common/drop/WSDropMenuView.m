@@ -336,10 +336,10 @@ static NSString *cellIdent = @"cellIdent";
     [UIView animateWithDuration:0.2 animations:^{
         self.bgButton.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.3];
         
-        if (_currSelectColumn == 0) {
+        if (self->_currSelectColumn == 0) {
             [self _showLeftTableViews];
         }
-        if (_currSelectColumn == 1) {
+        if (self->_currSelectColumn == 1) {
             
             [self _showRightTableView];
         }

@@ -8,8 +8,58 @@
 
 #ifndef YJMaik_pch
 #define YJMaik_pch
+#import "RDVTabBarItem.h"
+#import "RDVTabBarController.h"
+#import "AFNetworking.h"
+#import "Masonry.h"
+#import "MJRefresh.h"
+#import "YJBaseViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+#import "AnimationView.h"
+#import "UIView+MHCommon.h"
+#import "DateSource.h"
+#import "UIButton+WebCache.h"
+#import "UIImageView+WebCache.h"
+
+#define APP_SECRET @"cdzbMLE20171115"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define normal_alert(TITLE,MESSAGE,CANCEL) [[[UIAlertView alloc] initWithTitle:TITLE message:MESSAGE delegate:nil cancelButtonTitle:CANCEL otherButtonTitles:nil, nil] show]
+
+
+#define NSuserSave(OBJECT,KEY) [[NSUserDefaults standardUserDefaults]setObject:OBJECT forKey:KEY]
+
+#define NSuserRemove(KEY)  [[NSUserDefaults standardUserDefaults]removeObjectForKey:KEY]
+
+#define NSuserUse(KEY)  [[NSUserDefaults standardUserDefaults]objectForKey:KEY];
+
+
+#define normal_alert(TITLE,MESSAGE,CANCEL) [[[UIAlertView alloc] initWithTitle:TITLE message:MESSAGE delegate:nil cancelButtonTitle:CANCEL otherButtonTitles:nil, nil] show]
+
+//设备主屏宽高
+#define SCREEN_WIDTH ([UIScreen  mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define StatusBarHeight  [[UIApplication sharedApplication]statusBarFrame].size.height
+
+
+#define colorWithRGB(r, g, b) [UIColor colorWithRed:(r)  green:(g)  blue:(b) alpha:1.f]
+
+// ScreenWidth & kScreenHeight
+#define kGHScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define kGHScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define iPhoneXRAndXSMAX (kGHScreenWidth == 414.f && kGHScreenHeight == 896.f ? YES : NO)
+// iPhoneX
+#define iPhoneXAndXS (kGHScreenWidth == 375.f && kGHScreenHeight == 812.f ? YES : NO)
+#define kGHSafeAreaBottomHeight ((iPhoneXAndXS || iPhoneXRAndXSMAX) ?34 : 0)
+// StatusbarH + NavigationH
+#define kGHSafeAreaTopHeight ((iPhoneXAndXS || iPhoneXRAndXSMAX) ? 88.f : 64.f)
+// StatusBarHeight
+#define kStatusBarHeight ((iPhoneXAndXS || iPhoneXRAndXSMAX)  ? 44.f : 20.f)
+// NavigationBarHeigth
+#define kNavBarHeight 44.f
+// TabBarHeight
+#define kTabBarHeight  (iPhoneX ? (49.f+34.f) : 49.f)
 
 #endif /* YJMaik_pch */

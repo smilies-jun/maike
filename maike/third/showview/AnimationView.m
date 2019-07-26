@@ -35,18 +35,18 @@
 
 - (void)startAnimation
 {
-    NSTimeInterval time = MIN((CGFloat)_scoreLabel.text.length*0.1 + 0.5, 5.0);
+    NSTimeInterval time = MIN((CGFloat)_scoreLabel.text.length*0.1 + 0.5, 3.0);
     [UIView transitionWithView:_scoreLabel duration:time options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-        _scoreLabel.hidden = NO;
+        self->_scoreLabel.hidden = NO;
     } completion:^(BOOL finished) {
-        _scoreLabel.hidden = YES;
-        [_scoreLabel removeFromSuperview];
+        self->_scoreLabel.hidden = YES;
+        [self->_scoreLabel removeFromSuperview];
     }];
 }
 
 + (void)showString:(NSString *)string
 {
-    AnimationView * animation = [[AnimationView alloc] initWithFrame:CGRectMake((ScreenWidth - 180) / 2, (ScreenHeight - 80) / 2, 180, 80) withTitle:string];
+    AnimationView * animation = [[AnimationView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 180) / 2, (SCREEN_HEIGHT - 80) / 2, 180, 80) withTitle:string];
     [animation startAnimation];
 }
 

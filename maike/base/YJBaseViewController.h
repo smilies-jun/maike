@@ -11,6 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YJBaseViewController : UIViewController
+@property (nonatomic,strong)UIView *TopView;
+@property (nonatomic,strong)UIButton *BackButton;
+@property (nonatomic,strong)UILabel  *TopTitleLabel;
+@property (nonatomic , strong)UISearchController * searchController;
+
 
 @end
 

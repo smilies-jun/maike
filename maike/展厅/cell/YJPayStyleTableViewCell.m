@@ -20,5 +20,30 @@
 
     // Configure the view for the selected state
 }
-
+- (void)configUI:(NSIndexPath *)indexPath{
+    _NameLabel = [[UILabel alloc]init];
+    _NameLabel.text = @"商品金额";
+    _NameLabel.font = [UIFont systemFontOfSize:17];
+    _NameLabel.numberOfLines = 0;
+    [self addSubview:_NameLabel];
+    [_NameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.contentView.mas_left).offset(20);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(10);
+        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(40);
+    }];
+    
+  
+    _AdressBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _AdressBtn.backgroundColor = [UIColor redColor];
+    [self addSubview:_AdressBtn];
+    [_AdressBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self.contentView.mas_right).offset(-20);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(10);
+        make.width.mas_equalTo(20);
+        make.height.mas_equalTo(20);
+    }];
+    
+    
+}
 @end

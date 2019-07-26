@@ -294,7 +294,7 @@
     NSArray *types = @[
                        @(GHDropMenuTypeTitle),
                        @(GHDropMenuTypeTitle),
-                       @(GHDropMenuTypeOptionCollection),
+                       @(GHDropMenuTypeTitle),
                        @(GHDropMenuTypeFilter),
                        ];
     /** 菜单标题 */
@@ -310,10 +310,10 @@
         } else if (index == 1) {
             dropMenuModel.dataArray = dataArray2;
         } else if (index == 2) {
-//            dropMenuModel.dataArray = dataArray3;
-            dropMenuModel.sections = section1s;
-            dropMenuModel.sectionCount = 4.01;
-            dropMenuModel.menuWidth = [UIScreen mainScreen].bounds.size.width;
+           dropMenuModel.dataArray = dataArray3;
+//            dropMenuModel.sections = section1s;
+//            dropMenuModel.sectionCount = 4.01;
+//            dropMenuModel.menuWidth = [UIScreen mainScreen].bounds.size.width;
 
         } else if (index == 3) {
             dropMenuModel.dataArray = dataArray4;

@@ -65,8 +65,7 @@
     [self CheckNetWorkinguseingBlock:^(NSString *staus) {
         
         if ([staus isEqualToString:@"未连接网络"]) {
-             NSuserSave(@"1", @"Net");
-            NSuserSave(@"1", @"refresh");
+             [AnimationView showString:@"请检查网络"];
 
         }else{
            NSuserSave(@"0", @"Net");
@@ -109,8 +108,7 @@
     [self CheckNetWorkinguseingBlock:^(NSString *staus) {
         
         if ([staus isEqualToString:@"未连接网络"]) {
-            NSuserSave(@"1", @"Net");
-            NSuserSave(@"1", @"refresh");
+             [AnimationView showString:@"请检查网络"];
 
         }else{
             NSuserSave(@"0", @"Net");
@@ -150,8 +148,7 @@
     [self CheckNetWorkinguseingBlock:^(NSString *staus) {
         
         if ([staus isEqualToString:@"未连接网络"]) {
-            NSuserSave(@"1", @"Net");
-            NSuserSave(@"1", @"refresh");
+             [AnimationView showString:@"请检查网络"];
 
         }else{
             NSuserSave(@"0", @"Net");
@@ -207,8 +204,7 @@
     [self CheckNetWorkinguseingBlock:^(NSString *staus) {
         
         if ([staus isEqualToString:@"未连接网络"]) {
-            NSuserSave(@"1", @"Net");
-            NSuserSave(@"1", @"refresh");
+             [AnimationView showString:@"请检查网络"];
 
         }else{
             NSuserSave(@"0", @"Net");
@@ -261,8 +257,7 @@
     [self CheckNetWorkinguseingBlock:^(NSString *staus) {
         
         if ([staus isEqualToString:@"未连接网络"]) {
-            NSuserSave(@"1", @"Net");
-            NSuserSave(@"1", @"refresh");
+            [AnimationView showString:@"请检查网络"];
 
         }else{
             NSuserSave(@"0", @"Net");

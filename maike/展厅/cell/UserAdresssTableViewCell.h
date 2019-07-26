@@ -11,6 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UserAdresssTableViewCell : UITableViewCell
+@property (nonatomic, strong) UILabel *NameLabel;
+
+@property (nonatomic, strong) UILabel *AdressLabel;
+
+@property (nonatomic, strong) UILabel *DetailLabel;
+
+
+- (void)configUI:(NSIndexPath *)indexPath;
 
 @end
 

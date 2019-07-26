@@ -11,7 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YJPayStyleTableViewCell : UITableViewCell
+@property (nonatomic, strong) UILabel *NameLabel;
 
+@property (nonatomic, strong) UIButton *AdressBtn;
+
+- (void)configUI:(NSIndexPath *)indexPath;
 @end
 
 NS_ASSUME_NONNULL_END
